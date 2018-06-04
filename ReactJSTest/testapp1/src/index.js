@@ -55,12 +55,50 @@ class SlideShow extends React.Component {
 	}
 }
 
+function Post(props){
+	return (
+		<div className = "post">
+			{props.value.content}
+		</div>
+	);
+}
+
+class NewsFeed extends React.Component{
+	constructor(props) {
+		super(props);
+		this.state = {
+      		posts: [
+        		{content: 'This is my first post!'},
+        		{content: 'This is my second post!'}
+      		]
+    	};
+	}
+	
+	render(){
+		const posts = this.state.posts.map((post, index) =>
+      	<Post key={index} value={post} />
+    		);
+    	return (
+      		<div className="feed">
+      			<span>NewsFeed</span>
+        		{posts}
+        		<span className = "smallLink">See More >></span>
+      		</div>
+		);
+	}
+}
+
 class Page extends React.Component {
 	render() {
 		return (
+		<div>
 			<div className = "imageHolder">
 				<SlideShow />
 			</div>
+			<div className = "NewsFeed">
+				<NewsFeed />
+			</div>
+		</div>
 		);
 	}
 }
