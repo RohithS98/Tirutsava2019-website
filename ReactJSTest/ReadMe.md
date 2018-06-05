@@ -9,6 +9,6 @@ Use the following command to create a new app. Cownload dependencies if necessar
 
 <code>create-react-app</code>
 
-Finally copy the src and public folders into your react app(overwrite previous folders) and then type
+Finally copy the src, package.json, package-lock.json and public folders into your react app(overwrite previous files) and then type
 
 <code>npm start</code>
